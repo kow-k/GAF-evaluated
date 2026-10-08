@@ -1,0 +1,8 @@
+{
+  "DET":  ["the", "a", "an", "this", "that", "these", "those"],
+  "ADJ":  ["big", "small", "red", "old", "new", "good", "tall"],
+  "NOUN": ["dog", "house", "water", "city", "book", "table", "tree"],
+  "VERB": ["run", "eat", "see", "give", "take", "find", "know"],
+  "ADP":  ["in", "on", "at", "by", "for", "with", "from"],
+  "PRON": ["he", "she", "they", "we", "it", "you"]
+}

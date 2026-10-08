@@ -1,0 +1,26 @@
+# Embeddings & parses are NOT redistributed — see DATA / README
+*.vec
+*.vec.gz
+*.txt.gz
+*.bin
+*.model
+*.kv
+*.npy
+glove*/           # pretrained GloVe dirs
+cc.en*            # pretrained fastText
+stanza_const_cache*.json
+*_const_cache.json
+
+# Generated outputs
+*.pdf
+*.png
+sick_*.csv
+sts*.csv
+order_*.json
+random_control_results*.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/

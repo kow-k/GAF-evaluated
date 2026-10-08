@@ -1,0 +1,15 @@
+# Core
+numpy>=1.23
+scipy>=1.9
+# Embeddings I/O (gensim .bin/.kv models, word2vec/fastText)
+gensim>=4.3
+# Tokenisation + dependency parsing
+spacy>=3.5
+# Constituency parsing (transformers-free backend)
+stanza>=1.5
+# Figures
+matplotlib>=3.6
+#
+# After install:
+#   python -m spacy download en_core_web_sm
+#   python -c "import stanza; stanza.download('en')"

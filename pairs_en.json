@@ -1,0 +1,146 @@
+{
+  "language": "en",
+  "embedding_hint": "cc.en.300.vec.gz or glove-wiki-gigaword-*",
+  "lowercase": true,
+  "_note": "order/svo_swap = meaning-changing reorderings (expect different); adverb_shift/coordination = meaning-PRESERVING reorderings (expect same), length-matched to the different sets so the AUC is not confounded by length. order+adverb_shift are 2-token; svo_swap+coordination are 3-token. negation/voice add words (not exact reorderings) and are dropped under --reorder-only; voice uses expect 'similar' which the script maps to 'same'.",
+  "categories": {
+    "order": {
+      "expect": "different",
+      "pairs": [
+        ["dog bites man", "man bites dog"],
+        ["cat chased mouse", "mouse chased cat"],
+        ["teacher helped student", "student helped teacher"],
+        ["sand castle", "castle sand"],
+        ["fire truck", "truck fire"],
+        ["boat house", "house boat"],
+        ["sun flower", "flower sun"],
+        ["door bell", "bell door"],
+        ["book shelf", "shelf book"],
+        ["rain coat", "coat rain"],
+        ["gold fish", "fish gold"],
+        ["snow ball", "ball snow"],
+        ["bed room", "room bed"],
+        ["foot ball", "ball foot"],
+        ["hand bag", "bag hand"],
+        ["eye glasses", "glasses eye"],
+        ["tooth brush", "brush tooth"],
+        ["star fish", "fish star"],
+        ["blue bird", "bird blue"],
+        ["black board", "board black"]
+      ]
+    },
+    "svo_swap": {
+      "expect": "different",
+      "pairs": [
+        ["lion chased zebra", "zebra chased lion"],
+        ["boy kicked girl", "girl kicked boy"],
+        ["wolf ate sheep", "sheep ate wolf"],
+        ["king trusts queen", "queen trusts king"],
+        ["mother called daughter", "daughter called mother"],
+        ["doctor examined patient", "patient examined doctor"],
+        ["cat scratched dog", "dog scratched cat"],
+        ["hunter shot bear", "bear shot hunter"],
+        ["snake bit frog", "frog bit snake"],
+        ["eagle caught rabbit", "rabbit caught eagle"]
+      ]
+    },
+    "adverb_shift": {
+      "expect": "same",
+      "pairs": [
+        ["quickly ran", "ran quickly"],
+        ["quietly left", "left quietly"],
+        ["slowly walked", "walked slowly"],
+        ["softly spoke", "spoke softly"],
+        ["loudly sang", "sang loudly"],
+        ["gently pushed", "pushed gently"],
+        ["carefully drove", "drove carefully"],
+        ["happily smiled", "smiled happily"],
+        ["silently waited", "waited silently"],
+        ["bravely fought", "fought bravely"]
+      ]
+    },
+    "coordination": {
+      "expect": "same",
+      "pairs": [
+        ["cats and dogs", "dogs and cats"],
+        ["bread and butter", "butter and bread"],
+        ["salt and pepper", "pepper and salt"],
+        ["knife and fork", "fork and knife"],
+        ["black and white", "white and black"],
+        ["men and women", "women and men"],
+        ["coffee and tea", "tea and coffee"],
+        ["pen and paper", "paper and pen"],
+        ["sun and moon", "moon and sun"],
+        ["day and night", "night and day"]
+      ]
+    },
+    "negation": {
+      "expect": "different",
+      "pairs": [
+        ["the dog is running", "the dog is not running"],
+        ["she likes coffee", "she does not like coffee"],
+        ["he can swim", "he cannot swim"],
+        ["they will come", "they will not come"],
+        ["it is raining", "it is not raining"],
+        ["the cat is sleeping", "the cat is not sleeping"],
+        ["we have time", "we do not have time"],
+        ["I know the answer", "I do not know the answer"],
+        ["she is happy", "she is not happy"],
+        ["the door is open", "the door is not open"]
+      ]
+    },
+    "voice": {
+      "expect": "similar",
+      "pairs": [
+        ["the dog chased the cat", "the cat was chased by the dog"],
+        ["the boy kicked the ball", "the ball was kicked by the boy"],
+        ["the teacher helped the student", "the student was helped by the teacher"],
+        ["the man built the house", "the house was built by the man"],
+        ["the girl wrote the letter", "the letter was written by the girl"]
+      ]
+    }
+  },
+  "grammaticality": {
+    "baseline": [
+      "the cat sat on the mat",
+      "a dog chased the ball",
+      "she gave him a present",
+      "the big red car stopped",
+      "they walked to the store",
+      "he reads a good book",
+      "the children play in the park",
+      "she quickly ran home",
+      "a small bird sang loudly",
+      "the old man sat quietly",
+      "we found a nice place",
+      "they built a new house",
+      "she wrote a long letter",
+      "he drove the red car",
+      "the teacher helped the students",
+      "a tall woman entered the room",
+      "they ate dinner together",
+      "she put the book on the shelf",
+      "he told them a story",
+      "the dog slept under the table"
+    ],
+    "test_gram": [
+      "the dog runs to the door",
+      "she gives him a book",
+      "the old woman walks quickly",
+      "a big cat sleeps on the mat",
+      "he reads the new book"
+    ],
+    "test_dev": [
+      ["the cat sit on the mat", "agreement"],
+      ["a dog run quickly", "agreement"],
+      ["a dogs runs quickly", "agreement"],
+      ["the man walk slowly", "agreement"],
+      ["the cat the mat on sat", "word-order"],
+      ["he book reads the", "word-order"],
+      ["the sleeps cat", "word-order"],
+      ["she put the book", "missing-arg"],
+      ["the rock thinks about lunch", "selectional"],
+      ["she gave he the book", "case"]
+    ]
+  }
+}
